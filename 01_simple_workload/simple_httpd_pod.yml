@@ -1,0 +1,8 @@
+apiVersion: v1                  # Not capital V1  - case sensitive  
+kind: Pod                       #Should be match with kubectl api-resources output kind column  
+metadata:
+  name: httpd-pod
+spec:
+  containers:
+  - name: httpd-container
+    image: httpd
