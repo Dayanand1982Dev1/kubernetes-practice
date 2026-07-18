@@ -1,4 +1,4 @@
-apiVeersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment #Controller
 metadata:
   name: nginx-deploy
@@ -23,14 +23,14 @@ spec:
 ---
 apiVersion: v1
 kind: Service   
-  metadata:
-    name: nginx-service
-    labels:
-      app: nginx
-  spec:
-    selector:
-      app: nginx
-    ports:
-      - port: 80 #Service port
-        targetPort: 80 #Internal Access  
-    type: ClusterIP    
+metadata:
+  name: nginx-service
+  labels:
+    app: nginx
+spec:
+  selector:
+    app: nginx
+  ports:
+    - port: 80 #Service port
+      targetPort: 80 #Internal Access  
+  type: ClusterIP     
