@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: dev-team-res-quota
+  namespace: dev-team
+spec:
+  hard:
+    requests.cpu: "1"              # minimum 1000m = 10 X 100m each pod
+    requests.memory: "1Gi"         #         1000m = 10 X 100Mi each pod
+    limits.cpu: "2"                # minimum 2000m = 10 X 200m each pod
+    limits.memory: "2Gi"           #         2000m = 10 X 200Mi each pod 
+    pods: "10"
